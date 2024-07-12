@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './footer.css'
 
 //Import icons
@@ -12,9 +12,21 @@ import { FaTripadvisor } from "react-icons/fa";
 import { FiChevronRight } from "react-icons/fi";
 
 //Import assets
-import video2 from '../../Assets/Video5.mp4'
+import video2 from '../../Assets/Video7.mp4'
+
+// Importing AOS (Animate On Scroll) library for scroll animations
+import Aos from 'aos'
+// Importing the AOS CSS file to apply default styles for animations
+import 'aos/dist/aos.css'
+
 
 const Footer = () => {
+
+     // React hook to add a scroll animation
+     useEffect (()=> {
+        Aos.init({duration: 2000})
+    }, [])
+
     return (
         <section className="footer">
             <div className="videoDiv">
@@ -22,21 +34,21 @@ const Footer = () => {
             </div>
 
             <div className="secContent container">
-                <div className="contentDiv flec">
-                    <div className="text">
+                <div className="contentDiv flex">
+                    <div data-aos = "fade-up" className="text">
                         <small>KEEP IN TOUCH</small>
                         <h2>Travel with us</h2>
                     </div>
 
                     <div className="inputDiv flex">
-                        <input type="text" placeholder='Enter Email Address'/>
-                        <button className='btn flex' type="submit">
+                        <input data-aos = "fade-up" type="text" placeholder='Enter Email Address'/>
+                        <button data-aos = "fade-up" className='btn flex' type="submit">
                             SEND <FiSend className="icons"/>
                         </button>
                     </div>
                 </div>
 
-                <div className="footerCard flex">
+                <div data-aos = "fade-up" className="footerCard flex">
                     <div className="footerIntro flex">
                         <div className="logoDiv">
                             <a href="#" className="logo flex">
@@ -44,19 +56,19 @@ const Footer = () => {
                             </a>
                         </div>
 
-                        <div className="footerParagraph">
+                        <div data-aos = "fade-up" className="footerParagraph">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa nisi sit quam debitis. Officia sequi nostrum, consectetur soluta explicabo odit, voluptates iusto cupiditate quo quibusdam alias atque, suscipit voluptas rem?
                         </div>
 
-                        <div className="footerSocials">
-                        <AiOutlineTwitter className="icons"/>
-                        <AiFillYoutube className="icons"/>
-                        <AiFillInstagram className="icons"/>
-                        <FaTripadvisor className="icons"/>
+                        <div data-aos = "fade-up" className="footerSocials">
+                            <AiOutlineTwitter className="icons"/>
+                            <AiFillYoutube className="icons"/>
+                            <AiFillInstagram className="icons"/>
+                            <FaTripadvisor className="icons"/>
                         </div>
                     </div>
                     
-                    <div className="footerLinks grid">
+                    <div data-aos = "fade-up" data-aos-duration = "3000" className="footerLinks grid">
                         {/* Group One */}
                         <div className="linkGroup">
                             <span className="groupTitle">
@@ -86,7 +98,7 @@ const Footer = () => {
                         </div>
 
                         {/* Group Two */}
-                        <div className="linkGroup">
+                        <div data-aos = "fade-up" data-aos-duration = "4000" className="linkGroup">
                             <span className="groupTitle">
                                 PARTNERS
                             </span>
@@ -114,7 +126,7 @@ const Footer = () => {
                         </div>
 
                         {/* Group Tree */}
-                        <div className="linkGroup">
+                        <div data-aos = "fade-up" data-aos-duration = "5000" className="linkGroup">
                             <span className="groupTitle">
                                 LAST MINUTE
                             </span>
